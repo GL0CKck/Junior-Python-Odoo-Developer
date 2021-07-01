@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_test_tree" model="ir.ui.view">
+            <field name="name">myshop.patient.tree</field>
+            <field name="model">myshop.patient</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Test">
+                    <field name="name" />
+                    <field name="start_date" />
+                    <field name="end_date" />
+                    <field name="duration" />
+                    <field name="tester" />
+
+                </tree>
+            </field>
+        </record>
+        <record id="view_test_form" model="ir.ui.view">
+            <field name="name">myshop.patient.form</field>
+            <field name="model">myshop.patient</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <table>
+                                    <tr>
+                                        <td style="padding-right:10px;"><field name="name" required="1" placeholder="First Name" /></td>
+                                        <td style="padding-right:10px;"><field name="start_date" placeholder="Start Date" /></td>
+                                        <td style="padding-right:10px;"><field name="end_date" placeholder="End Date" /></td>
+                                        <td style="padding-right:10px;"><field name="duration" placeholder="Duration" /></td>
+                                    </tr>
+                                </table>
+                            </h1>
+                        </div>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_view_students">
+            <field name="name">User</field>
+            <field name="res_model">myshop.patient</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain_force">[('state','=','cancel')]</field>
+            <field name="help" type="html">
+
+            </field>
+        </record>
+        <menuitem id="test_menu" name="UpMenu"/>
+        <menuitem id="test_sub_menu" name="SubMenu" parent="test_menu"
+                  action="action_view_test"/>
+    </data>
+</odoo>
