@@ -18,7 +18,7 @@ def pyramida():
 
     print(m**2)
     for i in range(m):
-        print(' '*(m-i-1) + f'{n}'*(2*i+1), '\n')
+        print(' '*(m-i-1) + f'{n}'*(1*i+1), '\n')
 
 
 if __name__ == '__main__':
