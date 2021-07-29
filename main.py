@@ -3,12 +3,9 @@ def vowel_check():
     n = input('Введите текст: ')
     count = 0
     for i in n:
-        for q in a:
-            if i == q:
-                count += 1
-            else:
-                pass
-
+        if i in a:
+            count+=1
+        return count
     print(count)
 
 
